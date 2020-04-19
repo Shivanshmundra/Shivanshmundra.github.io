@@ -5,12 +5,322 @@
     <link>https://shivanshmundra.github.io/post/</link>
       <atom:link href="https://shivanshmundra.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Thu, 16 Apr 2020 21:51:23 +0530</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Sun, 19 Apr 2020 02:15:34 +0530</lastBuildDate>
     <image>
       <url>https://shivanshmundra.github.io/img/icon-192.png</url>
       <title>Posts</title>
       <link>https://shivanshmundra.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Intro to Imitation Learning: From Why to How!</title>
+      <link>https://shivanshmundra.github.io/post/imitation_learning/</link>
+      <pubDate>Sun, 19 Apr 2020 02:15:34 +0530</pubDate>
+      <guid>https://shivanshmundra.github.io/post/imitation_learning/</guid>
+      <description>&lt;p&gt;Jude is a football player, a noob but a wannabe great player. Jude is a die-hard fan of Christiano Ronaldo and watches every time Ronaldo is playing somewhere.&lt;/p&gt;
+&lt;p&gt;Jude wondered if he could just be like Ronaldo, exactly like Ronaldo. If by humongous practice, he could &lt;strong&gt;imitate&lt;/strong&gt; all skills Ronaldo has. He doesn’t care that while imitating, he is scoring a goal or not, he would just kick as Ronaldo would have kicked.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If I would kick exactly like Ronaldo, it would definitely be a goal!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Jude was fascinated by this idea, but also he was &lt;strong&gt;too lazy&lt;/strong&gt; and &lt;strong&gt;loved programming&lt;/strong&gt;(eternal bond). He thought why couldn’t he do something very similar in the virtual world, after all, he could fast forward this training process as he controls this virtual world.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://shivanshmundra.github.io/img/football.jpeg&#34; alt=&#34;Football image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Jude stumbled upon exactly what he was looking for&lt;/p&gt;
+&lt;h3 id=&#34;imitation-learning&#34;&gt;Imitation Learning&lt;/h3&gt;
+&lt;p&gt;Continuing Jude&amp;rsquo;s story, as he watches Ronaldo a lot, he knows what Ronaldo would do in numerous situations thrown at him. Let’s say Jude has practised and can mimic exactly Ronaldo in those &lt;strong&gt;exactly the same situations&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;As the number of situations Ronaldo(or any football player) can be in is infinite, Jude can’t cover all, how hard he tries! And since Jude was so busy in replicating Ronaldo, he didn’t learn anything when an unseen situation arises. Also, since Jude is human just like us, there is nothing like &lt;strong&gt;exactly like&lt;/strong&gt; Ronaldo.&lt;/p&gt;
+&lt;p&gt;However hard he try, there would be some scope of mistake every time!&lt;/p&gt;
+&lt;p&gt;We would see above circumstances projected mathematically later.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We can be wrong, or we can know it, but we can’t do both at the same time&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you understood Jude, you got Imitation learning. 😄&lt;/p&gt;
+&lt;h3 id=&#34;different-learning-paradigms&#34;&gt;Different Learning Paradigms&lt;/h3&gt;
+&lt;p&gt;Let us quickly define three verticals of machine learning which would help define our problem statement.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Supervised learning: Basically Find x&lt;sub&gt;s&lt;/sub&gt; and y&lt;sub&gt;s&lt;/sub&gt;, define a model and fit model to predict y&lt;sub&gt;s&lt;/sub&gt;.&lt;/li&gt;
+&lt;li&gt;Unsupervised learning: We wish to inherently learn the structure of data without &lt;strong&gt;explicitly&lt;/strong&gt; using labels.&lt;/li&gt;
+&lt;li&gt;Reinforcement learning: It&amp;rsquo;s about taking suitable actions in order to maximize reward in an environment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;now-why-imitation-learning&#34;&gt;Now Why Imitation Learning?&lt;/h3&gt;
+&lt;p&gt;Now consider that Jude won&amp;rsquo;t use Imitation learning as of now and want to train himself for every situation with objective being shooting a goal using Reinforcement learning.&lt;/p&gt;
+&lt;p&gt;In RL setting, reward for shooting a goal would be &lt;strong&gt;+1&lt;/strong&gt; and for rest it would be &lt;strong&gt;0&lt;/strong&gt;. As you know, this kind of reward is very sparse in nature. There may be handful of time where agent(Jude in our case!) would receive a positive reward to learn from.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The reward sparsity is one of the issues that hinders us in beating Montezuma’s Revenge — a notoriously hard Atari 2600 game, that has not been cracked yet.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Another issue is one we discussed above, we need virtual simulators to fasten this process of learning but what if we don&amp;rsquo;t have one or we want to learn something in real life?&lt;/p&gt;
+&lt;p&gt;Imitation learning can potentially solve these problems and also a bunch of others.&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-virtual-humanoid-trying-to-imitate-human-in-running&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shivanshmundra.github.io/img/humanoid_imitation.gif&#34; data-caption=&#34;Virtual Humanoid trying to imitate Human in running&#34;&gt;
+
+
+  &lt;img src=&#34;https://shivanshmundra.github.io/img/humanoid_imitation.gif&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Virtual Humanoid trying to imitate Human in running
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;how-imitation-learning&#34;&gt;How Imitation learning?&lt;/h3&gt;
+&lt;p&gt;Generally, Imitation learning is useful when it is easier for an expert to demonstrate the desired behaviour so that we don&amp;rsquo;t have to specify any reward function.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s say we collect expert demonstrations (also known as trajectories in RL setting)&lt;/p&gt;
+&lt;p&gt;$\tau$ = (s&lt;sub&gt;0&lt;/sub&gt;, a&lt;sub&gt;0&lt;/sub&gt;, s&lt;sub&gt;1&lt;/sub&gt;, a&lt;sub&gt;1&lt;/sub&gt;&amp;hellip;..) where actions (A&lt;sub&gt;s&lt;/sub&gt;) are based on expert&amp;rsquo;s policy(say human brain).  In some cases, we may require presence of &amp;ldquo;&lt;strong&gt;expert&lt;/strong&gt;&amp;rdquo; during training.&lt;/p&gt;
+&lt;p&gt;Once we get this trajectory, we slice this on each time step to get pairs of S&lt;sub&gt;s&lt;/sub&gt; and A&lt;sub&gt;s&lt;/sub&gt;.&lt;/p&gt;
+&lt;p&gt;We then treat these pairs as i.i.d examples and apply &lt;strong&gt;Supervised learning&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Changin loss function and optimisation strategies in this learning define various imitation learning algorithms. Let&amp;rsquo;s look at basic ones in them.&lt;/p&gt;
+&lt;h3 id=&#34;behaviour-cloning&#34;&gt;Behaviour Cloning&lt;/h3&gt;
+&lt;p&gt;This is simplest form of imitation learning where you treat these pairs(S&lt;sub&gt;s&lt;/sub&gt;, A&lt;sub&gt;s&lt;/sub&gt;) as i.i.d examples and apply simple supervised learning. We can choose the model to a tree based (Random Forest, Gradient Boosting) or Neural Networks depending on complexity of state and action space.&lt;/p&gt;
+&lt;h6 id=&#34;enough-of-talks-lets-see-implementation&#34;&gt;Enough of talks, let&amp;rsquo;s see implementation!&lt;/h6&gt;
+&lt;p&gt;You can head over to this folder : &lt;a href=&#34;https://github.com/Shivanshmundra/reinforcement_learning_beginner/tree/master/imitation_learning_bc&#34;&gt;https://github.com/Shivanshmundra/reinforcement_learning_beginner/tree/master/imitation_learning_bc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here, you can run &lt;code&gt;expert_recorder.py&lt;/code&gt; to record expert demonstrations, expert being you!. Right now it uses &lt;code&gt;MountainCar-v0&lt;/code&gt; environment where you have only 2 actions - right or left, to climb a mountain. You can guide by using &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;d&lt;/code&gt; for right and left respectively. You can change environment according to your ease too!&lt;/p&gt;
+&lt;p&gt;Once you have created &amp;ldquo;expert demonstrations&amp;rdquo;,  you can build a model and train on collected data. Trained policy then can be used to test on same environment.&lt;/p&gt;
+&lt;p&gt;Extensive instructions are in &lt;code&gt;README&lt;/code&gt; of folder. Also, I have borrowed this code, so to get good understanding of code, you can watch 
+&lt;a href=&#34;https://www.youtube.com/watch?v=0rsrDOXsSeM&amp;amp;feature=youtu.be&amp;amp;t=1370&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; video.&lt;/p&gt;
+&lt;p&gt;Once trained, it looks something like this:&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-mountain-car-trained-using-behaviour-cloning&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shivanshmundra.github.io/img/imitation_learning.gif&#34; data-caption=&#34;Mountain Car trained using Behaviour Cloning&#34;&gt;
+
+
+  &lt;img src=&#34;https://shivanshmundra.github.io/img/imitation_learning.gif&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Mountain Car trained using Behaviour Cloning
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;h5 id=&#34;shortcomings&#34;&gt;Shortcomings&lt;/h5&gt;
+&lt;p&gt;In some cases, Behavioural cloning can work excellently, precisely where there are limited number of states and time frame of an episode is very short.&lt;/p&gt;
+&lt;p&gt;Main reason for Behaviour cloning to not work generally is the i.i.d assumption we took above for supervised learning, while in real scenario like an MDP(Markov Decision Process) an action induces the next state, which breaks i.i.d assumption.&lt;/p&gt;
+&lt;p&gt;Also, as you know this algorithms is only trained on given states as we previously talked that no machine learning algorithm is 100% accurate, there is a chance of error on some time step $t$ and this error will keep on increasing with $t$ as with every wrong decision, agent might fall into an &amp;ldquo;more unknown&amp;rdquo; state thus prone to make more error.&lt;/p&gt;
+&lt;p&gt;In above cases, BC behaviour is undefined and can lead to catastrophic failures.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://shivanshmundra.github.io/img/failure_bc.png&#34; alt=&#34;image-20200419033525905&#34;&gt;&lt;/p&gt;
+&lt;p&gt;​					&lt;em&gt;Source : &lt;a href=&#34;https://web.stanford.edu/class/cs234/slides/lecture7.pdf&#34;&gt;https://web.stanford.edu/class/cs234/slides/lecture7.pdf&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;dagger-dataset-aggregation-algorithm&#34;&gt;DAgger (Dataset Aggregation) Algorithm&lt;/h3&gt;
+&lt;p&gt;This is basically an improved version of Behaviour cloning algorithms we discussed above.&lt;/p&gt;
+&lt;p&gt;Primary shortcoming of BC was that the data it had for training was static and agent could lead to unknown states where it doesn&amp;rsquo;t have expert demonstrations.&lt;/p&gt;
+&lt;p&gt;We could improve that by keeping expert in loop of training and querying expert in each loop to collect more data.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;stateDiagram
+    Expert_labelling_new_data --&amp;gt; Policy_learning_from_new_data
+    Policy_learning_from_new_data --&amp;gt; Sampling_data_from_learned_policy
+    Sampling_data_from_learned_policy --&amp;gt; Expert_labelling_new_data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The DAgger algorithms works as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Initial policy: $\pi$ &lt;sub&gt;0&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;For m = 1:
+&lt;ul&gt;
+&lt;li&gt;Collect trajectories $\tau$ sampled from policy $\pi$&lt;sub&gt;m-1&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;Estimate state distribution by discarding actions from $\tau$.&lt;/li&gt;
+&lt;li&gt;Ask expert to label/feedback on those states interactively.&lt;/li&gt;
+&lt;li&gt;Creating union of data collected till now  $\tau$&lt;sub&gt;1,2,&amp;hellip;m&lt;/sub&gt;&lt;/li&gt;
+&lt;li&gt;Training $\pi$ on this union of data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;DAgger is very efficient method, which doesn&amp;rsquo;t have shortcomings of Behaviour cloning algorithm. The only limitation of this method is the fact, that we need an expert that can evaluate the agent’s actions at all times, which is not possible in some applications.&lt;/p&gt;
+&lt;h4 id=&#34;lets-see-implementation-of-dagger&#34;&gt;Let&amp;rsquo;s see implementation of DAgger&lt;/h4&gt;
+&lt;p&gt;I have used code from Sergey Levine&amp;rsquo;s 
+&lt;a href=&#34;http://rail.eecs.berkeley.edu/deeprlcourse/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CS285 Deep Reinforcement Learning course&lt;/a&gt; material. If you want to dive deep into Deep Reinforcement learning, it&amp;rsquo;s a gold  mine!&lt;/p&gt;
+&lt;p&gt;Head over to my github repository - &lt;a href=&#34;https://github.com/Shivanshmundra/CS285-DeepRL-Solutions/tree/master/hw1&#34;&gt;https://github.com/Shivanshmundra/CS285-DeepRL-Solutions/tree/master/hw1&lt;/a&gt; for DAgger implementation on different gym environments.&lt;/p&gt;
+&lt;p&gt;In this solution, instead of human expert labelling state space, we have an expert policy which when queried, induce actions on given states. You can see with every iteration of Data Aggregation, episodic reward increases and agent approach towards convergence.&lt;/p&gt;
+&lt;p&gt;This repository also contain implementation of Behaviour cloning to compare between BC and DAgger algorithm.&lt;/p&gt;
+&lt;p&gt;Some of trained policies on different environments:&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-ant-v2-environment&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shivanshmundra.github.io/img/ant_imi_rl.gif&#34; data-caption=&#34;Ant-v2 Environment&#34;&gt;
+
+
+  &lt;img src=&#34;https://shivanshmundra.github.io/img/ant_imi_rl.gif&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Ant-v2 Environment
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-hopper-v2-environment&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shivanshmundra.github.io/img/hopper_imi_rl.gif&#34; data-caption=&#34;Hopper-v2 Environment&#34;&gt;
+
+
+  &lt;img src=&#34;https://shivanshmundra.github.io/img/hopper_imi_rl.gif&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Hopper-v2 Environment
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-humanoid-v2-environment&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://shivanshmundra.github.io/img/human_imi_rl.gif&#34; data-caption=&#34;Humanoid-v2 Environment&#34;&gt;
+
+
+  &lt;img src=&#34;https://shivanshmundra.github.io/img/human_imi_rl.gif&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Humanoid-v2 Environment
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;In all above simulations, on the left is trained policy using &lt;strong&gt;DAgger&lt;/strong&gt; algorithm and on right is expert policy which was used during training.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;other-algorithms&#34;&gt;Other Algorithms&lt;/h3&gt;
+&lt;p&gt;All algorithms explained above are cateegorised as &amp;ldquo;basic&amp;rdquo; algorithms in Imitation learning. There are several other algorithms to discuss but I haven&amp;rsquo;t understood them completely.&lt;/p&gt;
+&lt;p&gt;Some of them are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inverse Reinforcement Learning(IRL)&lt;/strong&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Learns the reward function from expert trajectorie, then derives optimal policy.&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s very expensive to run.&lt;/li&gt;
+&lt;li&gt;Indirectly learns optimal policy from reward function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Generative Adversarial Imitation Learning(GAIL)&lt;/strong&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It learns the policy, not the reward function from data.&lt;/li&gt;
+&lt;li&gt;Sometimes, it&amp;rsquo;s better than &amp;ldquo;expert&amp;rdquo; policy.&lt;/li&gt;
+&lt;li&gt;Idea is inspired from Generative Adversarial Networks, where we need to approximate ground truth probability distribution.&lt;/li&gt;
+&lt;li&gt;Here we need to approximate &amp;ldquo;expert&amp;rdquo; state-action distribution.&lt;/li&gt;
+&lt;li&gt;The goal is to find a policy pi-theta such that the discriminator cannot distinguish between states following the pi-theta as opposed to those from pi-expert.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;So this was a detour of Imitation Learning, Hope you found it insightful! I would love to hear feedback, if any. ❤️&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@SmartLabAI/a-brief-overview-of-imitation-learning-8a8a75c44a9c&#34;&gt;https://medium.com/@SmartLabAI/a-brief-overview-of-imitation-learning-8a8a75c44a9c&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://rail.eecs.berkeley.edu/deeprlcourse/&#34;&gt;http://rail.eecs.berkeley.edu/deeprlcourse/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Shivanshmundra/CS285-DeepRL-Solutions/tree/master/hw1&#34;&gt;https://github.com/Shivanshmundra/CS285-DeepRL-Solutions/tree/master/hw1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://hollygrimm.com/rl_gail&#34;&gt;https://hollygrimm.com/rl_gail&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@sanketgujar95/generative-adversarial-imitation-learning-266f45634e60&#34;&gt;https://medium.com/@sanketgujar95/generative-adversarial-imitation-learning-266f45634e60&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@jonathan_hui/rl-imitation-learning-ac28116c02fc&#34;&gt;https://medium.com/@jonathan_hui/rl-imitation-learning-ac28116c02fc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Multi Label Classification using Vowpal Wabbit library: From Why to How</title>

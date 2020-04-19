@@ -3,7 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://shivanshmundra.github.io/authors/admin/</loc>
+    <lastmod>2020-04-19T02:15:34+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivanshmundra.github.io/categories/artificial-intelligence/</loc>
+    <lastmod>2020-04-19T02:15:34+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivanshmundra.github.io/authors/</loc>
+    <lastmod>2020-04-19T02:15:34+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://shivanshmundra.github.io/tags/behaviour-cloning/</loc>
+    <lastmod>2020-04-19T02:15:34+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shivanshmundra.github.io/categories/</loc>
     <lastmod>2020-04-19T02:15:34+05:30</lastmod>
   </url>
   
@@ -48,18 +68,8 @@
   </url>
   
   <url>
-    <loc>https://shivanshmundra.github.io/authors/admin/</loc>
-    <lastmod>2020-04-16T21:51:23+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shivanshmundra.github.io/authors/</loc>
-    <lastmod>2020-04-16T21:51:23+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shivanshmundra.github.io/categories/</loc>
-    <lastmod>2020-04-16T21:51:23+05:30</lastmod>
+    <loc>https://shivanshmundra.github.io/categories/technical/</loc>
+    <lastmod>2020-04-19T02:15:34+05:30</lastmod>
   </url>
   
   <url>
@@ -69,11 +79,6 @@
   
   <url>
     <loc>https://shivanshmundra.github.io/post/multilabel/</loc>
-    <lastmod>2020-04-16T21:51:23+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shivanshmundra.github.io/categories/technical/</loc>
     <lastmod>2020-04-16T21:51:23+05:30</lastmod>
   </url>
   

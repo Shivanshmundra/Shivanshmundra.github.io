@@ -17,8 +17,8 @@
       <link>https://shivanshmundra.github.io/post/imitation_learning/</link>
       <pubDate>Sun, 19 Apr 2020 02:15:34 +0530</pubDate>
       <guid>https://shivanshmundra.github.io/post/imitation_learning/</guid>
-      <description>&lt;p&gt;Jude is a football player, a noob but a wannabe great player. Jude is a die-hard fan of Christiano Ronaldo and watches every time Ronaldo is playing somewhere.&lt;/p&gt;
-&lt;p&gt;Jude wondered if he could just be like Ronaldo, exactly like Ronaldo. If by humongous practice, he could &lt;strong&gt;imitate&lt;/strong&gt; all skills Ronaldo has. He doesn’t care that while imitating, he is scoring a goal or not, he would just kick as Ronaldo would have kicked.&lt;/p&gt;
+      <description>&lt;p&gt;Jude is an amateur football player but a wannabe great player. Jude is a die-hard fan of Christiano Ronaldo and watches every time he is playing anywhere.&lt;/p&gt;
+&lt;p&gt;Jude wondered if he could exactly be like Ronaldo. If by humongous practice, he could imitate all skills Ronaldo has. He doesn&amp;rsquo;t care that while imitating if he is scoring a goal or not, he would just kick as Ronaldo would have kicked.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;If I would kick exactly like Ronaldo, it would definitely be a goal!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -26,9 +26,9 @@
 &lt;p&gt;&lt;img src=&#34;https://shivanshmundra.github.io/img/football.jpeg&#34; alt=&#34;Football image&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Jude stumbled upon exactly what he was looking for&lt;/p&gt;
 &lt;h3 id=&#34;imitation-learning&#34;&gt;Imitation Learning&lt;/h3&gt;
-&lt;p&gt;Continuing Jude&amp;rsquo;s story, as he watches Ronaldo a lot, he knows what Ronaldo would do in numerous situations thrown at him. Let’s say Jude has practised and can mimic exactly Ronaldo in those &lt;strong&gt;exactly the same situations&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;As the number of situations Ronaldo(or any football player) can be in is infinite, Jude can’t cover all, how hard he tries! And since Jude was so busy in replicating Ronaldo, he didn’t learn anything when an unseen situation arises. Also, since Jude is human just like us, there is nothing like &lt;strong&gt;exactly like&lt;/strong&gt; Ronaldo.&lt;/p&gt;
-&lt;p&gt;However hard he try, there would be some scope of mistake every time!&lt;/p&gt;
+&lt;p&gt;Continuing Jude&amp;rsquo;s story, as he watches Ronaldo a lot, he knows what he would do in numerous situations thrown at him. Let’s say Jude has practised and can mimic exactly Ronaldo in those &lt;strong&gt;exactly the same situations&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;As the number of situations Ronaldo(or any football player) can be in is infinite, Jude can’t learn on all of them, how hard he tries! And since Jude was so busy in replicating Ronaldo, he didn’t learn anything when an unknown situation arises.&lt;/p&gt;
+&lt;p&gt;Also, since Jude is human just like us, there is nothing like &lt;strong&gt;exactly like&lt;/strong&gt; Ronaldo. However hard he try, there would be some scope of mistake every time!&lt;/p&gt;
 &lt;p&gt;We would see above circumstances projected mathematically later.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;We can be wrong, or we can know it, but we can’t do both at the same time&lt;/p&gt;
@@ -91,7 +91,7 @@
 &lt;p&gt;$\tau$ = (s&lt;sub&gt;0&lt;/sub&gt;, a&lt;sub&gt;0&lt;/sub&gt;, s&lt;sub&gt;1&lt;/sub&gt;, a&lt;sub&gt;1&lt;/sub&gt;&amp;hellip;..) where actions (A&lt;sub&gt;s&lt;/sub&gt;) are based on expert&amp;rsquo;s policy(say human brain).  In some cases, we may require presence of &amp;ldquo;&lt;strong&gt;expert&lt;/strong&gt;&amp;rdquo; during training.&lt;/p&gt;
 &lt;p&gt;Once we get this trajectory, we slice this on each time step to get pairs of S&lt;sub&gt;s&lt;/sub&gt; and A&lt;sub&gt;s&lt;/sub&gt;.&lt;/p&gt;
 &lt;p&gt;We then treat these pairs as i.i.d examples and apply &lt;strong&gt;Supervised learning&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Changin loss function and optimisation strategies in this learning define various imitation learning algorithms. Let&amp;rsquo;s look at basic ones in them.&lt;/p&gt;
+&lt;p&gt;Changing loss function and optimisation strategies in this learning define various imitation learning algorithms. Let&amp;rsquo;s look at basic ones in them.&lt;/p&gt;
 &lt;h3 id=&#34;behaviour-cloning&#34;&gt;Behaviour Cloning&lt;/h3&gt;
 &lt;p&gt;This is simplest form of imitation learning where you treat these pairs(S&lt;sub&gt;s&lt;/sub&gt;, A&lt;sub&gt;s&lt;/sub&gt;) as i.i.d examples and apply simple supervised learning. We can choose the model to a tree based (Random Forest, Gradient Boosting) or Neural Networks depending on complexity of state and action space.&lt;/p&gt;
 &lt;h6 id=&#34;enough-of-talks-lets-see-implementation&#34;&gt;Enough of talks, let&amp;rsquo;s see implementation!&lt;/h6&gt;
@@ -291,7 +291,7 @@
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Inverse Reinforcement Learning(IRL)&lt;/strong&gt; :&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Learns the reward function from expert trajectorie, then derives optimal policy.&lt;/li&gt;
+&lt;li&gt;Learns the reward function from expert trajectories, then derives optimal policy.&lt;/li&gt;
 &lt;li&gt;It&amp;rsquo;s very expensive to run.&lt;/li&gt;
 &lt;li&gt;Indirectly learns optimal policy from reward function.&lt;/li&gt;
 &lt;/ul&gt;

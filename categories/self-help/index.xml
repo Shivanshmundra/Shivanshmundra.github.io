@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Self Help | Shivansh Mundra</title>
+    <link>https://shivanshmundra.github.io/categories/self-help/</link>
+      <atom:link href="https://shivanshmundra.github.io/categories/self-help/index.xml" rel="self" type="application/rss+xml" />
+    <description>Self Help</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Tue, 21 Apr 2020 20:15:02 +0530</lastBuildDate>
+    <image>
+      <url>https://shivanshmundra.github.io/img/icon-192.png</url>
+      <title>Self Help</title>
+      <link>https://shivanshmundra.github.io/categories/self-help/</link>
+    </image>
+    
+    <item>
+      <title>Building Intelligent Habits</title>
+      <link>https://shivanshmundra.github.io/post/building_intelligent_habits/</link>
+      <pubDate>Tue, 21 Apr 2020 20:15:02 +0530</pubDate>
+      <guid>https://shivanshmundra.github.io/post/building_intelligent_habits/</guid>
+      <description>&lt;p&gt;Hi Everyone, reading this. Right now it&amp;rsquo;s only me.&lt;/p&gt;
+&lt;p&gt;So what&amp;rsquo;s this?&lt;/p&gt;
+&lt;p&gt;From quite a long amount of time, I am having this problem of distraction. I mean heavy distraction not just some cliche millennial kid making excuses about his underachievement, it&amp;rsquo;s a serious issue.&lt;/p&gt;
+&lt;p&gt;I am so much consumed by this dopamine releasing factory also known as social media, I have lost self-respect and confidence. At times, I have tried to counter this habit via numerous tactics but failed every time. It&amp;rsquo;s not just about trying and trying and trying. People have a wrong perception about nailing any thing, &lt;strong&gt;DON&amp;rsquo;T QUIT!&lt;/strong&gt; . To me this is a ridiculous thing, every time you try and fail, you lose a lot. Every time you are inching towards exhaustion, you loose faith in yourself and by time you accept you can&amp;rsquo;t achieve it(yes there are things you can&amp;rsquo;t do), you are null and void from inside. This dual loss is reason for a lot of psychological issues.&lt;/p&gt;
+&lt;p&gt;So, Let&amp;rsquo;s change this. Let&amp;rsquo;s bring some confidence and respect for yourself.&lt;/p&gt;
+&lt;h2 id=&#34;how&#34;&gt;How?&lt;/h2&gt;
+&lt;p&gt;Directly to the point, I have discovered that when you set targets for yourself and achieve them(not completely), it sparks some self-confidence. I tried this with this habit of Brushing at night, it takes the initial effort(a lot effort) to build one. But once it&amp;rsquo;s done, feeling is priceless.&lt;/p&gt;
+&lt;p&gt;So let&amp;rsquo;s take this one step forward with right approach, this doc would be my to-do tracker and I will evaluate myself.&lt;/p&gt;
+&lt;h2 id=&#34;goal-is-to-improve-1-everyday&#34;&gt;GOAL IS TO IMPROVE 1% EVERYDAY&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Date: 21st April, Entry #1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Before sleeping today, make sure to code basic model of referring image segmentation.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Read blogs about DeepFakes, what is SOTA, how they tackle it.&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Some Family time too!&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; No late night time killing on Social Media or Gaming!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;First entry is always easy to crack, anyway let&amp;rsquo;s see how I am doing this!&lt;/p&gt;
+&lt;p&gt;Hi So it&amp;rsquo;s end of first day, I hope everyday is like first day!&lt;/p&gt;
+&lt;p&gt;So there are few shortcomings, couldn&amp;rsquo;t properly about DeepFakes and a bit on social media. Can&amp;rsquo;t just detach something which was filled in my mind from a while.
+Plus point - I really learnt today how to create a complex model in PyTorch from  scratch. I was living in a fuggazy world where I was master in Deep Learning. For tomorrow, remember about &lt;strong&gt;1%&lt;/strong&gt; improvement.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Date: 22nd April, Entry #2&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Before afternoon sleep, read DeepForensics++ and other Kaggle kernels.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Have a talk with Sumit about server and data issue.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Some Family time!&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Afternoon, Meeting with Sarveshwar&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Ask Prof Abir about dilemma faced today in model.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; If got server, try to run one model from Kaggle else write extensive documentation about literature.&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Complete GAN code of Paper with Prof Abir&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Fooled by Randomness&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now second day is a bit tougher, spring is compressed. According to my experience, don&amp;rsquo;t try too harsh. Remember it&amp;rsquo;s a long game!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paper Summary | Shivansh Mundra</title>
+    <link>https://shivanshmundra.github.io/paper_summary/</link>
+      <atom:link href="https://shivanshmundra.github.io/paper_summary/index.xml" rel="self" type="application/rss+xml" />
+    <description>Paper Summary</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Wed, 22 Apr 2020 21:19:38 +0530</lastBuildDate>
+    <image>
+      <url>https://shivanshmundra.github.io/img/icon-192.png</url>
+      <title>Paper Summary</title>
+      <link>https://shivanshmundra.github.io/paper_summary/</link>
+    </image>
+    
+    <item>
+      <title>Xception: Deep Learning with Depthwise Separable Convolutions</title>
+      <link>https://shivanshmundra.github.io/paper_summary/xceptionnet/</link>
+      <pubDate>Wed, 22 Apr 2020 21:19:38 +0530</pubDate>
+      <guid>https://shivanshmundra.github.io/paper_summary/xceptionnet/</guid>
+      <description>&lt;p&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1610.02357&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Paper Link&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;previous-works-and-inspiration&#34;&gt;Previous Works and Inspiration&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;While Inception modules are conceptually similar to convolutions, the empirically appear to be capable of learning richer representations with less parameters.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A convolution layer attempts to learn filters in a 3D space, with 2 spatial dimensions (width and height) and a channel dimension; thus a single convolution kernel is tasked with simultaneously mapping cross-channel correlations and spatial correlations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In Inception module, we introduce 1x1 convolutions instead of 3 or 5 to extract fewer channels and focus on spatial information. After that mapping all correlations in these smaller 3D spaces.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In theory, cross channel correlations and spatial correlations are decoupled in Inception module.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;inception_archi.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;separable-convolution-layer&#34;&gt;Separable Convolution Layer&lt;/h3&gt;
+&lt;p&gt;So essentially the idea of inception of separating cross channel mapping and spatial mapping was already there as a layer in Tensorflow as &amp;ldquo;Separable Conv&amp;rdquo; Layer.&lt;/p&gt;
+&lt;p&gt;Main difference between this and Inception version is :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The order of the operations: depthwise separable convolutions as usually  implemented (e.g. in TensorFlow) perform first channel-wise spatial convolution and then perform 1x1 convolution, whereas Inception performs the 1x1 convolution first.(doesn&amp;rsquo;t have a difference as both are stacked)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The presence or absence of a non-linearity after the first operation. In Inception, both operations are followed by a ReLU non-linearity, however depthwise separable convolutions are usually implemented without non-linearities.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;key-contributions&#34;&gt;Key Contributions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Author say that we can totally decouple cross channel correlations and spatial correlations in the feature maps of convolution neural network.&lt;/li&gt;
+&lt;li&gt;Parameters are almost same in Inception and Xception model while Xception outperforms by a large margin on a dataset with large number of classes(17k).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;xception_archi.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rest all things are same, just replacing inception module by depthwise separable conv layer block also making the architecture simple.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;takeaway&#34;&gt;Takeaway&lt;/h2&gt;
+&lt;p&gt;Idea of decoupling of channel dimension and spatial feature mapping from convolution kernel is great! So deciphering it mathematically:&lt;/p&gt;
+&lt;p&gt;We know each channel in Convolution block represents some high level feature say in human, each channel would map a body part(just for example!). Then this idea of  depthwise conv proposes that in process of identifying one body part don&amp;rsquo;t process info from other body part info, it would disturb the signal in processing.&lt;/p&gt;
+&lt;p&gt;After we get good signal info body part, then we can use info from others to get high level part info.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

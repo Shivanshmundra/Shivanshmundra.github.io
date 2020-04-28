@@ -5,12 +5,102 @@
     <link>https://shivanshmundra.github.io/categories/artificial-intelligence/</link>
       <atom:link href="https://shivanshmundra.github.io/categories/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" />
     <description>Artificial Intelligence</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Wed, 22 Apr 2020 21:19:38 +0530</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Wed, 29 Apr 2020 00:17:44 +0530</lastBuildDate>
     <image>
       <url>https://shivanshmundra.github.io/img/icon-192.png</url>
       <title>Artificial Intelligence</title>
       <link>https://shivanshmundra.github.io/categories/artificial-intelligence/</link>
     </image>
+    
+    <item>
+      <title>Recurrent Multimodal Interaction for Referring Image Segmentation</title>
+      <link>https://shivanshmundra.github.io/paper_summary/recurrent_multimodal/</link>
+      <pubDate>Wed, 29 Apr 2020 00:17:44 +0530</pubDate>
+      <guid>https://shivanshmundra.github.io/paper_summary/recurrent_multimodal/</guid>
+      <description>&lt;h2 id=&#34;problem-statement&#34;&gt;Problem Statement&lt;/h2&gt;
+&lt;p&gt;The problem statement is to segment out visual object from natural language query. Semantics of that visual object are defined from NLP query. For ex. &lt;code&gt;Man in pink shirt&lt;/code&gt; in some image, we want to segment out corresponding region where any/all man is wearing pink shirt.&lt;/p&gt;
+&lt;h2 id=&#34;related-works-and-inspiration&#34;&gt;Related Works and Inspiration&lt;/h2&gt;
+&lt;p&gt;Right now this problem is addressed in academia by extracting out image features separately from Deep Convolution Neural Network and language features from LSTM cells. These features are then concatenated together to form a fused representation of image and query. This fused representation is somehow used to predict corresponding segmented region with trivial loss function.&lt;/p&gt;
+&lt;p&gt;What authors feel is we, human don&amp;rsquo;t perceive things is similar manner like LSTM, we don&amp;rsquo;t remember everything after the last loop over word embeddings. In author words:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For example, consider the expression “the man on the right wearing blue”. Without seeing an actual image, all information in the sentence needs to be remembered, meaning the sentence embedding needs to encode IS MAN, ON RIGHT, WEAR BLUE jointly. However, with the actual image available, the reasoning process can be decomposed as a sequential process, where the model first identifies all pixels that agree with IS MAN, then prunes out those that do not correspond with ON RIGHT, and finally suppresses those that do not agree with WEAR BLUE.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This task is also similar to visual question answering task where you need to generate answer(NLP) based on an image and a question. The difference only is, in VQA, we need sequence generation(in answer) while here we need to produce segmentation mask at once.&lt;/p&gt;
+&lt;p&gt;Authors achieve this by applying LSTM in a convolution manner.&lt;/p&gt;
+&lt;h2 id=&#34;key-contributions&#34;&gt;Key Contributions&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;We propose a novel model, namely convolutional multimodal LSTM, to encode the sequential interactions between individual semantic, visual, and spatial information.&lt;/li&gt;
+&lt;li&gt;We demonstrate the superior performance of the word to-image multimodal LSTM approach on benchmark datasets over the baseline model.&lt;/li&gt;
+&lt;li&gt;We analyze the intermediate output of the proposed multimodal LSTM approach and empirically explain how this approach enforces a more effective word-toimage interaction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Basically they want to convert this referring image segmentation into an sequential process.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;model&#34;&gt;Model&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;rmi_model.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;rmi_np.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Here concatenation of visual features and spatial features with language features is fed to &lt;code&gt;mLSTM&lt;/code&gt; cell as an input and &lt;code&gt;mLSTM&lt;/code&gt; cell produces an output for same. SInce mLSTM receives multimodal data, we can understand this as a 1x1 convolution applied to fused features .&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The same mLSTM operation is shared for all image locations. This is equivalent to treating the mLSTM as a 1×1 convolution over the feature map of size W 0 × H0 × (DI + DS + 8). In other words, this is a convolutional LSTM that shares weights both across spatial location and time step.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;result_rmi.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;my-takeaways&#34;&gt;My Takeaways&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;This idea of treating this problem as sequential problem is innovative and having an mLSTM cell to encode both visual and linguistic features is also good. This gives model ability to forget all those pixel which defy correspondence initially.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;My guts are that this kind of model would work good even where there are small objects because at each time step there would be a reduction/change of probable pixels for segmentation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I still believe that this essentially is fusing of features from image and language just more diffused!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I want to study good papers on VQA as they can provide me with good literature and insights on this task.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My Journey to Natural Language Processing</title>
+      <link>https://shivanshmundra.github.io/paper_summary/intro_nlp/</link>
+      <pubDate>Sat, 25 Apr 2020 11:59:39 +0530</pubDate>
+      <guid>https://shivanshmundra.github.io/paper_summary/intro_nlp/</guid>
+      <description>&lt;h2 id=&#34;natural-language-processing&#34;&gt;Natural Language Processing&lt;/h2&gt;
+&lt;p&gt;I consider the reader to be familiar with normal machine learning terminology and methods. We here are going to deal with Supervised learning mostly.&lt;/p&gt;
+&lt;p&gt;Since all machine learning models are mathematical function approximators, we can;t input a sentence to a mathematical model!&lt;/p&gt;
+&lt;p&gt;There is nothing like &lt;code&gt;f(&#39;I am here to learn NLP&#39;)&lt;/code&gt;, one need to convert from our language to machine language so that it becomes something like &lt;code&gt;f([1, 0, 1, 2, 5 ..])&lt;/code&gt;, since this is the method computer is most familiar with. So first jumping to this conversion:&lt;/p&gt;
+&lt;h3 id=&#34;conversion-of-text-to-mathematical-representation&#34;&gt;Conversion of text to mathematical representation&lt;/h3&gt;
+&lt;h4 id=&#34;1-basic-approach-of-making-dictionary&#34;&gt;1. Basic Approach of making dictionary&lt;/h4&gt;
+&lt;p&gt;Here you just create a dictionary or set of all available words present in data and represent each word/sentence with one hot vector. For example : Let&amp;rsquo;s say we have 8 words in our dictionary and sentence &lt;code&gt;I like banana&lt;/code&gt; is to be encoded, it would be something like &lt;code&gt;[1,0,0,0,1,0,0,1]&lt;/code&gt; where index representing &lt;code&gt;I, like and Banana&lt;/code&gt;. In this case, length of this vector would be fixed and equal to vocabulary of data.&lt;/p&gt;
+&lt;p&gt;In this case, there is no sense of context here, &lt;code&gt;like&lt;/code&gt; can be used in different context yet same representation.  But duh! It&amp;rsquo;s the first method and supposed to be this dumb!&lt;/p&gt;
+&lt;h4 id=&#34;2-tf-idf-representation&#34;&gt;2. TF-IDF Representation&lt;/h4&gt;
+&lt;p&gt;Full form is : &lt;strong&gt;Term Frequency-Inverse Document Frequency&lt;/strong&gt; . The full form mentioned is self explanatory still we would want to get a feel. So here it is:&lt;/p&gt;
+&lt;p&gt;Term-Frequency representation means number of times a word is occurring and represent in one hot vector by it&amp;rsquo;s frequency for ex &lt;code&gt;[1,2,0,0,3]&lt;/code&gt;. Now in this case, let&amp;rsquo;s say there is a common word &lt;code&gt;the&lt;/code&gt; which is occurring in most of corpus(another name for sentence!) but adds no specific meaning to understanding. So we take TF representation and multiply it with IDF which is $log(N/nw)$ where N is total number of document/corpus  and nw is number of corpus which contain that word. Smart thinking!&lt;/p&gt;
+&lt;p&gt;We won&amp;rsquo;t use this in our supervised learning paradigm, we would just go with one hot vector and prepare embedding for our model.&lt;/p&gt;
+&lt;h3 id=&#34;terminologies&#34;&gt;Terminologies&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Corpus(singular- Corpura) : A sentence or document in general consisting of words.&lt;/li&gt;
+&lt;li&gt;Tokenization: Splitting a corpus based on white spaces(in general) in between(for English specifically).
+&lt;ul&gt;
+&lt;li&gt;Say a sentence &lt;code&gt;I want to learn Tokenization :-)&lt;/code&gt; is to be tokenized.&lt;/li&gt;
+&lt;li&gt;Tokenization would be &lt;code&gt;[&#39;I&#39;, &#39;want&#39;, &#39;to&#39;, &#39;learn&#39;, &#39;Tokenization&#39;, &#39;:-)&#39;]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;There are several libraries which use context and tokenize the corpus.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;N-gram tokens: Taking consecutive &lt;code&gt;n&lt;/code&gt; tokens from tokenized representation in contiguous manner.&lt;/li&gt;
+&lt;li&gt;POS Tagging: Categorising tokens to parts of speech.&lt;/li&gt;
+&lt;li&gt;Dependency Parsing: Extracting relationship/dependency between different tokens in sentence.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;workflow-of-nlp-pipeline&#34;&gt;Workflow of NLP Pipeline&lt;/h3&gt;
+&lt;p&gt;In every NLP data, there are three main components:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Vocabulary:&lt;/strong&gt; We want a bijection mapping where we map tokens to mathematical integers. We create a dictionary mapping tokens to indexes. This would also contain index to token mapping.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Vectorizer&lt;/strong&gt;: This method produces vectors from text/corpus using vocabulary above.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Dataloader&lt;/strong&gt;: Traditional data science batchloader which yield data points in rolling fashion.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Xception: Deep Learning with Depthwise Separable Convolutions</title>

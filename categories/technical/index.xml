@@ -5,12 +5,54 @@
     <link>https://shivanshmundra.github.io/categories/technical/</link>
       <atom:link href="https://shivanshmundra.github.io/categories/technical/index.xml" rel="self" type="application/rss+xml" />
     <description>Technical</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Wed, 29 Apr 2020 00:17:44 +0530</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Mon, 22 Jun 2020 09:15:50 +0530</lastBuildDate>
     <image>
       <url>https://shivanshmundra.github.io/img/icon-192.png</url>
       <title>Technical</title>
       <link>https://shivanshmundra.github.io/categories/technical/</link>
     </image>
+    
+    <item>
+      <title>Understanding Deep Learning requires Re-Thinking Generalisation</title>
+      <link>https://shivanshmundra.github.io/paper_summary/rethinking_generalisation/</link>
+      <pubDate>Mon, 22 Jun 2020 09:15:50 +0530</pubDate>
+      <guid>https://shivanshmundra.github.io/paper_summary/rethinking_generalisation/</guid>
+      <description>&lt;p&gt;
+&lt;a href=&#34;https://arxiv.org/abs/1611.03530&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Paper Link&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;generalisation-in-machine-learning-models&#34;&gt;Generalisation in Machine Learning Models&lt;/h3&gt;
+&lt;p&gt;In Supervised Machine Learning, we train the model on training set and evaluate the model on a validation/testing set which is unseen during the training process. It is assumed that the data distribution is same for training and testing set.&lt;/p&gt;
+&lt;p&gt;So, basically our goal for a &lt;strong&gt;good&lt;/strong&gt; Machine Learning model is to &lt;strong&gt;generalise&lt;/strong&gt; well from training data to any data from the problem domain.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;generalisation&lt;/strong&gt; refers to how well a machine learning model learns and generalises to a new data avoiding Over-fitting and Under-fitting.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;generalisation Error&lt;/strong&gt; refers to difference between Training error and Testing error. Increases with over fitting.&lt;/p&gt;
+&lt;h2 id=&#34;key-findings-from-paper&#34;&gt;Key Findings from Paper&lt;/h2&gt;
+&lt;p&gt;As of now, we understand that if a model is big(large parameter space), it tries to over-fit training data and we need explicit regularisation(l2 norm on parameters, data augmentations, weight decay, Early Stopping) to decrease Generalisation error.
+&lt;strong&gt;But&lt;/strong&gt; this paper has shown that SOTA image classification models easily fit on random labelling of training data or even when true pixels are replaced by random pixels. This process is unaffected by explicit regularisation.&lt;/p&gt;
+&lt;p&gt;By their experiments, they show that if size of Deep Neural Networks is greater than sample size(which usually happens), Neural Networks are able to capture meaningful signal in the data, &lt;strong&gt;while at the same time fit the noisy part using brute-force.&lt;/strong&gt; This is also unaffected by hyper-parameter tuning, same set of hyper-parameters converges for noisy labelled data too.&lt;/p&gt;
+&lt;h3 id=&#34;effective-capacity-of-neural-network&#34;&gt;Effective Capacity of Neural Network&lt;/h3&gt;
+&lt;p&gt;They have shown with their experiments that generalisation error not only depend on explicit regularisation and optimizer but on model architectures as well.&lt;/p&gt;
+&lt;p&gt;Also, random noisy image pixels are easy to over-fit compared to true images as random images are well separated in pixel space than original one.&lt;/p&gt;
+&lt;h3 id=&#34;traditional-bound-for-generalization&#34;&gt;Traditional bound for Generalization&lt;/h3&gt;
+&lt;p&gt;Theoretically, we have VC dimension and Rademacher complexity to measure capacity of Classification model. But authors from their results showed that regularisation bound achieved theoretically is of no use in realistic settings.&lt;/p&gt;
+&lt;p&gt;Similar is the case with evaluation of robustness of training algorithms. Namely Uniform Stability, which doesn&amp;rsquo;t take data into account just algorithm and it&amp;rsquo;s difficult to utilise this stability notion.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;graph.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;finally-role-of-regularisation&#34;&gt;Finally Role of Regularisation&lt;/h2&gt;
+&lt;p&gt;With experimenting on different architectures on namely 3 explicit regularisation - data augmentation, weight decay and Dropout authors concluded that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Regularisation is important, but we can achieve more by just changing the architecture of model.&lt;/li&gt;
+&lt;li&gt;Regularises are not only responsible for generalisation capacity of deep nets.&lt;/li&gt;
+&lt;li&gt;Early Stopping could potentially improve generalisation performance.&lt;/li&gt;
+&lt;li&gt;Batch Norm give marginal gains on generalisation error.&lt;/li&gt;
+&lt;li&gt;Model could perform well even after regularises are removed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;expressive-power-of-nns&#34;&gt;Expressive Power of NNs&lt;/h3&gt;
+&lt;p&gt;Authors chose a different approach than traditional approach of showing what functions of entire domain can or can&amp;rsquo;t be represented. They show expressive power on a finite sample of size $n$.&lt;/p&gt;
+&lt;p&gt;In their words, &amp;ldquo;There exists a two-layer neural network with ReLU activation and $2n+d$ weights that can represent any function on a sample of size $n$ in $d$ dimensions&amp;rdquo;&lt;/p&gt;
+&lt;h3 id=&#34;implicit-regularisation&#34;&gt;Implicit Regularisation&lt;/h3&gt;
+&lt;p&gt;They have theoretically shown that in linear models, SGD often converge to solution with minimum norm. And minimum norm doesn&amp;rsquo;t predict anything about generalisation performance.&lt;/p&gt;
+&lt;p&gt;Doing simple tricks like preprocessing with some conv layers, gaussian kernels on pixels improve generalisation error which pose serious questions on traditional generalisation understanding.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;This shows that the reasons for why optimization is empirically easy must be different from the true cause of generalisation&amp;rdquo;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Recurrent Multimodal Interaction for Referring Image Segmentation</title>

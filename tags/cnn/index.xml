@@ -5,12 +5,64 @@
     <link>https://shivanshmundra.github.io/tags/cnn/</link>
       <atom:link href="https://shivanshmundra.github.io/tags/cnn/index.xml" rel="self" type="application/rss+xml" />
     <description>CNN</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Wed, 29 Apr 2020 00:17:44 +0530</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Tue, 18 Aug 2020 14:24:26 +0530</lastBuildDate>
     <image>
       <url>https://shivanshmundra.github.io/img/icon-192.png</url>
       <title>CNN</title>
       <link>https://shivanshmundra.github.io/tags/cnn/</link>
     </image>
+    
+    <item>
+      <title>Multi Modal Variational AutoEncoders</title>
+      <link>https://shivanshmundra.github.io/paper_summary/mmvae/</link>
+      <pubDate>Tue, 18 Aug 2020 14:24:26 +0530</pubDate>
+      <guid>https://shivanshmundra.github.io/paper_summary/mmvae/</guid>
+      <description>&lt;h1 id=&#34;variational-mixture-of-experts-autoencoders-for-multi-modal-deep-generative-modelshttpsarxivorgpdf191103393pdf&#34;&gt;
+&lt;a href=&#34;https://arxiv.org/pdf/1911.03393.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Variational Mixture-of-Experts Autoencoders for Multi Modal Deep Generative Models&lt;/a&gt;&lt;/h1&gt;
+&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;
+&lt;p&gt;They characterize successful learning of such models as fulfilment of four criteria - i) implicit latent decomposition into shared and private subspaces, ii) coherent joint generation over all modalities, iii) coherent cross-generation across individual modalities, and iv) improved model learning for individual modalities through multi-modal integration.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;image-20200818150052698.png&#34; alt=&#34;image-20200818150052698&#34;&gt;&lt;/p&gt;
+&lt;p&gt;When we take all modalities(visual, linguistic and physical) into account, we can get a better understanding and representation of context, for ex. here bird.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;image-20200818150435770.png&#34; alt=&#34;image-20200818150435770&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;image-20200818150445361.png&#34; alt=&#34;image-20200818150445361&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Latent Factorization - There is some shared and private spaces across different modalities.&lt;/li&gt;
+&lt;li&gt;Joint Generation - From union of both spaces we could generate different modalities. Basically, for example, text and image should be semantically same.&lt;/li&gt;
+&lt;li&gt;Cross Generation - Model can generate data in one modality conditioned on some other modality. For ex. From text, generate an image.&lt;/li&gt;
+&lt;li&gt;Synergy - Observing both modalities should enhance context understanding. For example observing image and text should improve in specificity of generation of image and text when taken alone.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;image-20200818151150020.png&#34; alt=&#34;image-20200818151150020&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;image-20200818151230522.png&#34; alt=&#34;image-20200818151230522&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;related-works&#34;&gt;Related Works&lt;/h3&gt;
+&lt;p&gt;There has been some work in the area of joint representations for example&lt;/p&gt;
+&lt;p&gt;Suzuki et al. (2017) introduced the joint multimodal VAE (JMVAE) that learns shared representation with joint encoder qΦ(z | x1, x2). To handle missing data at test time, two unimodal encoders qΦ(z | x1) and qΦ(z | x2) are trained to match qΦ(z | x1, x2) with a KL constraint between them.&lt;/p&gt;
+&lt;p&gt;However, they only focuses on one way transformation that too image-to-image and often require additional modelling components.&lt;/p&gt;
+&lt;p&gt;More recently, Wu and Goodman (2018) introduced Product of Experts(PoE) over marginal posteriors, enabling cross model generations at test time without requiring additional inference networks and multi-stage training regimes.&lt;/p&gt;
+&lt;h3 id=&#34;some-mathematics&#34;&gt;Some Mathematics&lt;/h3&gt;
+&lt;p&gt;We denote modalities with m = 1,2,3&amp;hellip;&amp;hellip;M and latent representation as z.&lt;/p&gt;
+&lt;p&gt;VAE is of form :  &lt;img src=&#34;image-20200818152456926.png&#34; alt=&#34;image-20200818152456926&#34;&gt;&lt;/p&gt;
+&lt;p&gt;VAEs are parametrized by $\theta$ which is deep neural network.&lt;/p&gt;
+&lt;p&gt;The objective of training VAEs is to maximise the marginal likelihood of
+the data pΘ(x1:M). However, computing the evidence is intractable as it requires knowledge of the true joint posterior pΘ(z | x1:M). To tackle this, we approximate the true unknown posterior by a variational posterior qΦ(z | x1:M), which now allows optimising an evidence lower bound (ELBO) through stochastic gradient descent (SGD), with ELBO defined as&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;image-20200819173629938.png&#34; alt=&#34;image-20200819173629938&#34;&gt;&lt;/p&gt;
+&lt;p&gt;They further used IWAE estimator to get a tighter bound and higher entropy.&lt;/p&gt;
+&lt;p&gt;Here too, we are facing one issue, how to get joint posterior q$\phi$? One basic way is get a single encoder that takes all modalities as input. But that would mean, we need all modalities present at test time which won&amp;rsquo;t be true for cross modal generation.&lt;/p&gt;
+&lt;p&gt;So instead they propose to factorise joint variational posterior as a combination of unimodal posteriors(weighted sum) :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;image-20200819174049519.png&#34; alt=&#34;image-20200819174049519&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;When using Product-of-Experts, any one modality hold the power of veto.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For better understanding of VAEs both from Neural Network and probabilistic perspective, you can follow these links:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ermongroup.github.io/cs228-notes/inference/variational/&#34;&gt;https://ermongroup.github.io/cs228-notes/inference/variational/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cse.iitk.ac.in/users/piyush/courses/tpmi_winter19/readings/VI_Review.pdf&#34;&gt;https://www.cse.iitk.ac.in/users/piyush/courses/tpmi_winter19/readings/VI_Review.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://jaan.io/what-is-variational-autoencoder-vae-tutorial/&#34;&gt;https://jaan.io/what-is-variational-autoencoder-vae-tutorial/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
+&lt;p&gt;As this is a new idea and theory based paper, they have done experiments on MNIST-SVHN data and Caltech Bird dataset(challenging). You can view results 
+&lt;a href=&#34;https://github.com/iffsid/mmvae&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; on all four characteristics mentioned above.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Recurrent Multimodal Interaction for Referring Image Segmentation</title>

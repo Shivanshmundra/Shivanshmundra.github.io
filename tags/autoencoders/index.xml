@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Multimodal | Shivansh Mundra</title>
-    <link>https://shivanshmundra.github.io/tags/multimodal/</link>
-      <atom:link href="https://shivanshmundra.github.io/tags/multimodal/index.xml" rel="self" type="application/rss+xml" />
-    <description>Multimodal</description>
+    <title>AutoEncoders | Shivansh Mundra</title>
+    <link>https://shivanshmundra.github.io/tags/autoencoders/</link>
+      <atom:link href="https://shivanshmundra.github.io/tags/autoencoders/index.xml" rel="self" type="application/rss+xml" />
+    <description>AutoEncoders</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Shivansh Mundra</copyright><lastBuildDate>Tue, 18 Aug 2020 14:24:26 +0530</lastBuildDate>
     <image>
       <url>https://shivanshmundra.github.io/img/icon-192.png</url>
-      <title>Multimodal</title>
-      <link>https://shivanshmundra.github.io/tags/multimodal/</link>
+      <title>AutoEncoders</title>
+      <link>https://shivanshmundra.github.io/tags/autoencoders/</link>
     </image>
     
     <item>
@@ -61,57 +61,6 @@ the data pΘ(x1:M). However, computing the evidence is intractable as it require
 &lt;h3 id=&#34;results&#34;&gt;Results&lt;/h3&gt;
 &lt;p&gt;As this is a new idea and theory based paper, they have done experiments on MNIST-SVHN data and Caltech Bird dataset(challenging). You can view results 
 &lt;a href=&#34;https://github.com/iffsid/mmvae&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; on all four characteristics mentioned above.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Recurrent Multimodal Interaction for Referring Image Segmentation</title>
-      <link>https://shivanshmundra.github.io/paper_summary/recurrent_multimodal/</link>
-      <pubDate>Wed, 29 Apr 2020 00:17:44 +0530</pubDate>
-      <guid>https://shivanshmundra.github.io/paper_summary/recurrent_multimodal/</guid>
-      <description>&lt;h2 id=&#34;problem-statement&#34;&gt;Problem Statement&lt;/h2&gt;
-&lt;p&gt;The problem statement is to segment out visual object from natural language query. Semantics of that visual object are defined from NLP query. For ex. &lt;code&gt;Man in pink shirt&lt;/code&gt; in some image, we want to segment out corresponding region where any/all man is wearing pink shirt.&lt;/p&gt;
-&lt;h2 id=&#34;related-works-and-inspiration&#34;&gt;Related Works and Inspiration&lt;/h2&gt;
-&lt;p&gt;Right now this problem is addressed in academia by extracting out image features separately from Deep Convolution Neural Network and language features from LSTM cells. These features are then concatenated together to form a fused representation of image and query. This fused representation is somehow used to predict corresponding segmented region with trivial loss function.&lt;/p&gt;
-&lt;p&gt;What authors feel is we, human don&amp;rsquo;t perceive things is similar manner like LSTM, we don&amp;rsquo;t remember everything after the last loop over word embeddings. In author words:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;For example, consider the expression “the man on the right wearing blue”. Without seeing an actual image, all information in the sentence needs to be remembered, meaning the sentence embedding needs to encode IS MAN, ON RIGHT, WEAR BLUE jointly. However, with the actual image available, the reasoning process can be decomposed as a sequential process, where the model first identifies all pixels that agree with IS MAN, then prunes out those that do not correspond with ON RIGHT, and finally suppresses those that do not agree with WEAR BLUE.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This task is also similar to visual question answering task where you need to generate answer(NLP) based on an image and a question. The difference only is, in VQA, we need sequence generation(in answer) while here we need to produce segmentation mask at once.&lt;/p&gt;
-&lt;p&gt;Authors achieve this by applying LSTM in a convolution manner.&lt;/p&gt;
-&lt;h2 id=&#34;key-contributions&#34;&gt;Key Contributions&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;We propose a novel model, namely convolutional multimodal LSTM, to encode the sequential interactions between individual semantic, visual, and spatial information.&lt;/li&gt;
-&lt;li&gt;We demonstrate the superior performance of the word to-image multimodal LSTM approach on benchmark datasets over the baseline model.&lt;/li&gt;
-&lt;li&gt;We analyze the intermediate output of the proposed multimodal LSTM approach and empirically explain how this approach enforces a more effective word-toimage interaction.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Basically they want to convert this referring image segmentation into an sequential process.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;model&#34;&gt;Model&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;rmi_model.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;rmi_np.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Here concatenation of visual features and spatial features with language features is fed to &lt;code&gt;mLSTM&lt;/code&gt; cell as an input and &lt;code&gt;mLSTM&lt;/code&gt; cell produces an output for same. SInce mLSTM receives multimodal data, we can understand this as a 1x1 convolution applied to fused features .&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The same mLSTM operation is shared for all image locations. This is equivalent to treating the mLSTM as a 1×1 convolution over the feature map of size W 0 × H0 × (DI + DS + 8). In other words, this is a convolutional LSTM that shares weights both across spatial location and time step.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;result_rmi.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;my-takeaways&#34;&gt;My Takeaways&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;This idea of treating this problem as sequential problem is innovative and having an mLSTM cell to encode both visual and linguistic features is also good. This gives model ability to forget all those pixel which defy correspondence initially.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;My guts are that this kind of model would work good even where there are small objects because at each time step there would be a reduction/change of probable pixels for segmentation.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;I still believe that this essentially is fusing of features from image and language just more diffused!&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;I want to study good papers on VQA as they can provide me with good literature and insights on this task.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
